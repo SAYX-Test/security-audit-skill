@@ -26,6 +26,9 @@ Multiple runs against the same repo are additive. Each run explores different co
 | `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
 | `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
 | `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
+| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
+| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
+| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
 | `VALIDATION-AND-REPORTING.md` | Phases 3–6 validation, reporting, and verification |
 | `report-schema.json` | JSON schema for `findings.json` (confirmed and rejected finding structures) |
 | `validate-findings.cjs` | Zero-dependency Node.js validator that checks `findings.json` against the schema |
