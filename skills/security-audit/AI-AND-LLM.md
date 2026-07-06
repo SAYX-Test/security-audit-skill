@@ -58,7 +58,7 @@ Conversation history, embeddings, or the KV/prompt cache keyed too broadly, so o
 - **Draw the boundary before hunting.** Enumerate: what identity do tools run as, what's in the context window, who can write to each context source, where does output go. Most AI findings fall out of a correct map of these four; most AI false positives come from not drawing it.
 - **Find the capability, then find who can reach it.** Start from the most dangerous tool (delete, spend, exec, fetch-internal) and work backwards to whether untrusted text can reach its arguments. Power × reachability, same as any privileged interface.
 
-## Verification discipline (apply before reporting ANY finding here)
+## Validation rules (apply before reporting ANY finding here)
 
 1. **Name the boundary crossed.** State exactly who the attacker is, whose session/identity the payload executes in, and what they get that they couldn't get directly. If attacker and victim are the same principal and the capability is one they already have, it is not a finding.
 2. **For confused-deputy / excessive-agency claims, prove both halves.** Show (a) the tool performs no per-resource check scoped to the requesting user, AND (b) the action is one the user could not perform through a normal authenticated request. A shared service credential with per-user query scoping fails both tests and is not a finding.

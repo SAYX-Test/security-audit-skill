@@ -58,7 +58,7 @@ An attacker-controlled key (`__proto__`, `constructor.prototype`) reaching a *ne
 - **Server escaping ends where the fragment begins.** Data after `#`, plus `window.name` and cross-window messages, never reaches the server — so server-side filters can't see it. That blind spot is the DOM-XSS goldmine.
 - **Enumerate the escape hatches.** In an auto-escaping framework, the candidate list *is* every `dangerouslySetInnerHTML`/`v-html`/`bypassSecurityTrust*`/`$sce.trustAs*` call. Start there.
 
-## Verification discipline (apply before reporting ANY finding here)
+## Validation rules (apply before reporting ANY finding here)
 
 1. **Confirm a controllable source AND an executing sink on the client path.** Cite the source (`location.hash`, `event.data`, `window.name`) and the sink (`innerHTML`, `eval`, navigation), and show untrusted data reaching the sink without sanitization. A source with no sink, or a sink fed only trusted data, is not a finding.
 2. **For prototype pollution, prove the recursive write AND a gadget.** Show the nested/recursive assignment that reaches `Object.prototype`, then the code that later reads the polluted property to a security-relevant effect. Pollution with no reachable gadget is not exploitable.
